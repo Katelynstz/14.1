@@ -1,0 +1,96 @@
+<!-- Author: Your Name -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive String Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light gray background color */
+            text-align: center;
+            margin: 50px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff; /* White background color for output */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<nav>
+    <h2>
+        navigation
+    </h2>
+    <a href="./index.html">
+        home
+    </a><br>
+    <a href="./Boards.html">
+        boards
+    </a><br>
+    <a href="./game.html">
+        Game
+    </a><br>
+    <a href="./strings.html">
+        Strings 
+    </a><br>
+    <a href="./palidrome.html">
+        palindrome 
+    </a><br>
+    <a href="./pws.html">
+        palindrome with sound
+    </a><br>
+    <a href="./12-1.html">
+        assignment
+    </a><br>
+    <a href="./table.html">
+        table
+    </a><br>
+    <a href="/Final Project/home.html">
+        website
+    </a><br>
+</nav>
+
+<body>
+    <h1>String Operations</h1>
+
+    <label for="userInput">Enter a String: </label>
+    <input type="text" id="userInput" placeholder="Type here">
+
+    <button onclick="processString()">Process</button>
+
+    <div id="output"></div>
+
+    <script>
+        // Function to process the user input
+        function processString() {
+            // Get user input
+            const userInput = document.getElementById('userInput').value;
+
+            // Check if the input is empty
+            if (!userInput) {
+                alert('Please enter a valid string.');
+                return;
+            }
+
+            // Initialize result string
+            let result = 'Processed String: ';
+
+            // Loop through each character in the input string
+            for (let i = 0; i < userInput.length; i++) {
+                // Perform some string manipulation (e.g., convert to uppercase)
+                result += userInput[i].toUpperCase();
+            }
+
+            // Display the result
+            document.getElementById('output').innerText = result;
+        }
+    </script>
+</body>
+</html>

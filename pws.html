@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker with Sound</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<nav>
+    <h2>
+        navigation
+    </h2>
+    <a href="./index.html">
+        home
+    </a><br>
+    <a href="./Boards.html">
+        boards
+    </a><br>
+    <a href="./game.html">
+        Game
+    </a><br>
+    <a href="./strings.html">
+        Strings 
+    </a><br>
+    <a href="./palidrome.html">
+        palindrome 
+    </a><br>
+    <a href="./pws.html">
+        palindrome with sound
+    </a><br>
+    <a href="./12-1.html">
+        assignment
+    </a><br>
+    <a href="./table.html">
+        table
+    </a><br>
+    <a href="home.html">
+        website
+    </a><br>
+</nav>
+
+<body>
+
+    <h2>Palindrome Checker</h2>
+    <label for="inputText">Enter a word or phrase:</label>
+    <input type="text" id="inputText">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result"></p>
+
+    <audio id="audio" src="52237780-3061-4b71-96e4-8cdde1d3f0ae.mp4"></audio>
+
+    <script>
+        function isPalindrome(str) {
+            const cleanStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            return cleanStr === cleanStr.split('').reverse().join('');
+        }
+
+        function checkPalindrome() {
+            const inputText = document.getElementById('inputText').value;
+            const resultElement = document.getElementById('result');
+            const audio = document.getElementById('audio');
+
+            if (isPalindrome(inputText)) {
+                resultElement.textContent = `${inputText} is a palindrome!`;
+                // Play sound for a positive result
+                audio.play();
+            } else {
+                resultElement.textContent = `${inputText} is not a palindrome.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
